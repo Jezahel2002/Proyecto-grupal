@@ -1,7 +1,9 @@
-/* body {
-    width: 500px;
+body {
+    max-width: 100%;
+    min-width: 200px;
+    font-weight: 100%;
     background-image: url(https://www.demadera.info/wp-content/uploads/MADERA-ROBLE.jpg);
-} */
+}
 
 body {
     background-color: #e5da9a;
@@ -31,6 +33,8 @@ img {
 input {
     border-radius: 40px;
     font-size: 200%;
+    max-width: 100%;
+    min-width: 200px;
 }
 
 button {
@@ -49,4 +53,18 @@ button:active {
 
 button:disabled {
     background-color: red;
+}
+
+@font-face {
+    font-family: "MiFuente";
+    src: url(".../C:\Users\The Bridge\Introduccion a programacion full strack\93th\Proyecto grupal 2\MoneyControl\Pirata_One\PirataOne-Regular.ttf")
+        format("hola") url("fonts/mifuente.woff") format("woff"); /* Formato woff (para IE9+) */
+    font-weight: normal;
+    font-style: normal;
+}
+
+.payList {
+    font-size: 25px;
+    font-family: "MiFuente";
+    color: white;
 }
