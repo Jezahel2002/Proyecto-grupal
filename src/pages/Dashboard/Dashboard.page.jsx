@@ -44,7 +44,6 @@ const Dashboard = () => {
         <input value={gasto}
           onChange={(event) => setGasto(event.target.value)}
           placeholder="Ingrese cantidad"
-
           type="number"
           min="1"
           id="quantity"
