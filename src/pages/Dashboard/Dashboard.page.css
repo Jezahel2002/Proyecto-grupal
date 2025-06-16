@@ -1,0 +1,52 @@
+/* body {
+    width: 500px;
+    background-image: url(https://www.demadera.info/wp-content/uploads/MADERA-ROBLE.jpg);
+} */
+
+body {
+    background-color: #e5da9a;
+}
+
+.header {
+    color: #ffd700;
+    font-size: 80%;
+    text-shadow: 25px 20px 10px black;
+    -webkit-text-stroke-width: 1px;
+    -webkit-text-stroke-color: black;
+}
+
+img {
+    width: 150px;
+}
+
+.mainContainer {
+    display: flex;
+    border-radius: 25px;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    font-size: 80%;
+}
+
+input {
+    border-radius: 40px;
+    font-size: 200%;
+}
+
+button {
+    border-radius: 8px;
+    padding: 0.6em 1.2em;
+    font-size: 1em;
+    font-family: inherit;
+    color: white;
+    background-color: blue;
+    cursor: pointer;
+}
+
+button:active {
+    background-color: skyblue;
+}
+
+button:disabled {
+    background-color: red;
+}
