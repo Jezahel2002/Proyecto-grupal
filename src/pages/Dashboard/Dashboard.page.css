@@ -1,20 +1,23 @@
 body {
-    max-width: 100%;
-    min-width: 200px;
-    font-weight: 100%;
+    width: 500px;
     background-image: url(https://www.demadera.info/wp-content/uploads/MADERA-ROBLE.jpg);
 }
 
 body {
     background-color: #e5da9a;
+    max-width: 100%;
+    min-width: 200px;
+    font-weight: 100%;
 }
 
-.header {
+.vic {
     color: #ffd700;
     font-size: 80%;
     text-shadow: 25px 20px 10px black;
     -webkit-text-stroke-width: 1px;
     -webkit-text-stroke-color: black;
+    display: flex;
+    flex-direction: row;
 }
 
 img {
@@ -34,7 +37,7 @@ input {
     border-radius: 40px;
     font-size: 200%;
     max-width: 100%;
-    min-width: 200px;
+    min-width: 50%;
 }
 
 button {
@@ -64,7 +67,16 @@ button:disabled {
 }
 
 .payList {
+    margin-left: 150px;
+    width: 75%;
+    background-color: aliceblue;
     font-size: 25px;
     font-family: "MiFuente";
-    color: white;
+    color: rgb(37, 223, 204);
+}
+
+.total {
+    width: 100%;
+    background-color: aliceblue;
+    font-size: 40px;
 }

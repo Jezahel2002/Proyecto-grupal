@@ -6,6 +6,7 @@ const Dashboard = () => {
   const [gasto, setGasto] = useState(0);
   const [tipo, setTipo] = useState("Supermercado"); // default
   const [gastos, setGastos] = useState([]);
+  const [totalGastos, setTotalGastos] = useState(0);
 
   // Cargar los gastos desde localStorage al inicio
   useEffect(() => {
@@ -30,19 +31,19 @@ const Dashboard = () => {
     const nuevosGastos = [...gastos, gastoToSave];
     setGastos(nuevosGastos);
     localStorage.setItem('gastos', JSON.stringify(nuevosGastos));
+
+    const totalGastos = nuevosGastos.reduce((gasto, valor) => gasto + valor, 0);
+    setTotalGastos(totalGastos);
   };
 
   return (
     <>
-      <div className="header">
-        <span><img src="https://cdn.iconscout.com/icon/free/png-256/free-pirata-1479929-1253052.png?f=webp"
-          alt="img"></img><h1>MoneyControl</h1></span>
+      <div className="vic">
 
-      </div>
-
-      <br />
-      <div>
         <div className="mainContainer">
+          <span><img src="https://cdn.iconscout.com/icon/free/png-256/free-pirata-1479929-1253052.png?f=webp"
+            alt="img"></img><h1>MoneyControl</h1></span>
+
           <input
             value={gasto}
             onChange={(e) => setGasto(Number(e.target.value))}
@@ -65,17 +66,20 @@ const Dashboard = () => {
           </select>
 
           <button onClick={handleRegisterButtonClick}>Registrar</button>
-        </div></div>
+          <p className="total">Total gastos: {totalGastos}€</p>
+        </div>
 
-      <div>
-        <ul>
-          {gastos.map((g, index) => (
-            <li className="payList" key={index}>
-              {g.tipo} - {g.gasto}€<br />
-              {g.fecha}
-            </li>
-          ))}
-        </ul>
+
+        <div className="list">
+          <ul>
+            {gastos.map((g, index) => (
+              <li className="payList" key={index}>
+                {g.tipo} - {g.gasto}€<br />
+                {g.fecha}
+              </li>
+            ))}
+          </ul>
+        </div>
       </div>
     </>
   );
