@@ -16,14 +16,16 @@ const Dashboard = () => {
     }
   }, []);
 
+  useEffect(() => {
+    const total = gastos.reduce((acc, gasto) => acc + gasto.gasto, 0);
+    setTotalGastos(total);
+  }, [gastos]);
+
   const handleRegisterButtonClick = () => {
     if (gasto <= 0 || !tipo) {
       alert("Por favor, ingresa un gasto válido y selecciona un tipo.");
       return;
     }
-    useEffect(() => {
-
-    })
 
     const gastoToSave = {
       gasto,
@@ -34,9 +36,6 @@ const Dashboard = () => {
     const nuevosGastos = [...gastos, gastoToSave];
     setGastos(nuevosGastos);
     localStorage.setItem('gastos', JSON.stringify(nuevosGastos));
-
-    const totalGastos = nuevosGastos.reduce((gasto, valor) => gasto + valor, 0);
-    setTotalGastos(totalGastos);
   };
 
   return (
