@@ -4,7 +4,7 @@ import "../Dashboard/Dashboard.page.css";
 
 const Dashboard = () => {
   const [gasto, setGasto] = useState(0);
-  const [tipo, setTipo] = useState("Supermercado"); // default
+  const [tipo, setTipo] = useState("Supermercado");
   const [gastos, setGastos] = useState([]);
   const [totalGastos, setTotalGastos] = useState(0);
 
@@ -21,6 +21,9 @@ const Dashboard = () => {
       alert("Por favor, ingresa un gasto válido y selecciona un tipo.");
       return;
     }
+    useEffect(() => {
+
+    })
 
     const gastoToSave = {
       gasto,
